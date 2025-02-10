@@ -12,7 +12,14 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-
+Route::get('/afthabck96', function () {
+    return Inertia::render('AfthabResume', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
